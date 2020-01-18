@@ -10,11 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1000
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
+        
+        myCell.textLabel?.text = "This is row number \(indexPath.row + 1)"
+        
+        return myCell
     }
     
 
